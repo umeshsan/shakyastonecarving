@@ -1,6 +1,7 @@
 :root {
     --space-20: 20px;
     --header-height: 50px;
+    --SP-header-height: 90px;
 }
 
 /* Firefox supports scrollbar colors */
@@ -377,8 +378,7 @@ header {
     }
 
     header {
-        margin-top: 0;
-        height: 100vh;
+        margin-top: var(--SP-header-height);
     }
 
     .catalog-container {
