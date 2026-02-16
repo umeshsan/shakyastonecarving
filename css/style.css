@@ -180,7 +180,7 @@ header {
 /* Hamburger & Sidebar */
 .hamburger {
     position: fixed;
-    top: 60px;
+    top: 80px;
     left: 0;
     font-size: 26px;
     cursor: pointer;
@@ -272,19 +272,6 @@ header {
     justify-content: center;
 }
 
-@media(max-width:576px) {
-    .catalog-container {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 12px;
-    }
-
-    .header-information {
-        h1 {
-            font-size: 1.2rem;
-        }
-    }
-}
-
 /* Product Card */
 .product-card {
     display: flex;
@@ -306,19 +293,6 @@ header {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
-
-/* Fade animation */
-/*.fade-in {
-    opacity: 0;
-    animation: fadeIn 0.4s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}*/
 
 /* Product Images */
 .product-images {
@@ -389,4 +363,40 @@ header {
 .product-card p {
     margin: 3px 0;
     font-size: 14px;
+}
+
+@media(max-width:576px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header-top {
+        font-size: 12px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header {
+        margin-top: 0;
+        height: 100vh;
+    }
+
+    .catalog-container {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        padding-inline: 0;
+    }
+
+    .header-information {
+        h1 {
+            font-size: 1.25rem;
+        }
+
+        h2 {
+            font-size: 1rem;
+        }
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
 }
