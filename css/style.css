@@ -378,7 +378,7 @@ header {
     }
 
     header {
-        margin-top: var(--SP-header-height);
+        height: calc(100vh - var(--SP-header-height));
     }
 
     .catalog-container {
