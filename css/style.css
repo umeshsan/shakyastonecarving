@@ -62,7 +62,7 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height);
+    min-height: var(--header-height);
     z-index: 99;
     font-size: 13px;
 }
@@ -270,6 +270,19 @@ header {
     margin: 80px auto 50px auto;
     padding: 0 20px;
     justify-content: center;
+}
+
+@media(max-width:576px) {
+    .catalog-container {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+    }
+
+    .header-information {
+        h1 {
+            font-size: 1.2rem;
+        }
+    }
 }
 
 /* Product Card */
