@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Stone Carving Catalog</title>
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="css/fancybox-6.1.7/fancybox.min.css">
+	<link rel="stylesheet" href="css/aos-2.3.1/aos.min.css">
+
+	<!-- googlefont -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="header-top">
+		<div>
+			Proprietor: Amar Shakya | <a href="tel:+9779841612650">+977-9841612650</a> <br>
+			Artists: Sr. Prem R. Shakya | <a href="tel:+9779841594918">+977-9841594918</a>
+		</div>
+		<div>
+			Govt. Regd. No. : 7085/386/059/060 <br>
+			PAN No. : 301360276
+		</div>
+	</div>
+	<header>
+		<figure><img src="images/logo.png" alt="Shakya Stone Carving"></figure>
+		<div class="header-information">
+			<h1 id="title"></h1>
+			<h2 id="subtitle"></h2><br>
+			<p>
+				Bhinchhe Bahal, Patan, House No.20754, Nepal <br>
+				Factory: Balkumari <small>[Near Balkumari Temple]</small><br>
+				Phone No.: <a href="tel:+9779841612650">+977-9841612650</a><br>
+				email: <a href="mailto:shakya_carving@hotmail.com">shakya_carving@hotmail.com</a><br>
+				website: <a href="www.shakyastonecarving.com.np" target="_blank">www.shakyastonecarving.com.np</a><br>
+			</p>
+		</div>
+
+		<!-- Scroll Down Icon -->
+		<div id="scroll-down" class="scroll-down">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+				<path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
+			</svg>
+		</div>
+	</header>
+
+	<!-- Hamburger -->
+	<div class="hamburger" id="hamburger">☰</div>
+
+	<!-- Sidebar -->
+	<div class="sidebar" id="sidebar">
+		<div class="sidebar-header">
+			<span>Catalog</span>
+			<button class="close-btn" id="closeBtn">✕</button>
+		</div>
+		<ul class="menu-list">
+			<li><a href="#" data-category="all" class="active">All</a></li>
+			<li><a href="#" data-category="buddha">Buddha</a></li>
+			<li><a href="#" data-category="chaitya">Chaitya</a></li>
+			<li><a href="#" data-category="ganesh">Ganesh</a></li>
+			<li><a href="#" data-category="kuber">Kuber</a></li>
+			<li><a href="#" data-category="lokeshwar">Lokeshwar</a></li>
+			<li><a href="#" data-category="mahankaal">Mahankaal</a></li>
+			<li><a href="#" data-category="tara">Tara</a></li>
+		</ul>
+	</div>
+
+	<div class="overlay" id="overlay"></div>
+
+	<!-- Catalog Grid -->
+	<div class="catalog-container" id="catalog-container"></div>
+
+	<!-- Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/fancybox.min.js"></script>
+	<script src="js/aos.min.js"></script>
+	<script src="js/catalog.js"></script>
+
+	<!-- Initialize Fancybox -->
+	<script>
+	Fancybox.bind("[data-fancybox]", {
+		Carousel: {
+			Zoomable: {
+				Panzoom: {
+					clickAction: "iterateZoom",
+					maxScale: 2,
+				},
+			},
+		},
+	});
+	</script>
+
+	<!-- Initialize AOS -->
+	<script>
+	AOS.init({
+		duration: 800,
+		easing: 'ease-in-out-sine',
+		once: true
+	});
+	</script>
+
+	<script>
+	const titleText = "SHAKYA STONE CARVING";
+	const subtitleText = '"Place of Stone Arts"';
+
+	const titleEl = document.getElementById("title");
+	const subtitleEl = document.getElementById("subtitle");
+
+	let i = 0;
+	let j = 0;
+
+	titleEl.classList.add("typing");
+
+	function typeTitle() {
+		if (i < titleText.length) {
+			titleEl.textContent += titleText.charAt(i);
+			i++;
+			setTimeout(typeTitle, 100);
+		} else {
+			titleEl.classList.remove("typing");
+			subtitleEl.classList.add("typing");
+			setTimeout(typeSubtitle, 400);
+		}
+	}
+
+	function typeSubtitle() {
+		if (j < subtitleText.length) {
+			subtitleEl.textContent += subtitleText.charAt(j);
+			j++;
+			setTimeout(typeSubtitle, 80);
+		} else {
+			subtitleEl.classList.remove("typing");
+		}
+	}
+
+	typeTitle();
+	</script>
+
+	<script>
+	const scrollIcon = document.getElementById("scroll-down");
+	const nextSection = document.getElementById("catalog-container");
+	const headerHeight = 60; // in px, same as header
+
+	scrollIcon.addEventListener("click", () => {
+		const sectionPosition = nextSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+		window.scrollTo({ top: sectionPosition, behavior: "smooth" });
+	});
+	</script>
+</body>
+
+</html>
