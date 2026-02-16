@@ -57,7 +57,7 @@ a {
     padding-inline: var(--space-20);
     background: #111111;
     color: #ffd700;
-    padding-inline: 20px;
+    padding-block: 8px;
     position: fixed;
     top: 0;
     left: 0;
