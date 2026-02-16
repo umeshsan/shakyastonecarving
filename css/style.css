@@ -181,7 +181,7 @@ header {
 /* Hamburger & Sidebar */
 .hamburger {
     position: fixed;
-    top: 80px;
+    top: 100px;
     left: 0;
     font-size: 26px;
     cursor: pointer;
